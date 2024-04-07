@@ -1,0 +1,144 @@
+<html>
+
+<title>Asteroids</title>
+
+<!-- JS -->
+<script src='scripts/jquery.min.js'></script>
+<script src='scripts/page.js'></script>
+
+<!-- CSS -->
+<link rel="stylesheet" type="text/css" href="style/index.css">
+<link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+<!-- HTML -->
+
+<body>
+  <div class='outer-container'>
+    <div class='game-window'>
+
+      <!-- Main Menu -->
+      <div id="landing-page">
+        <div id="landing-header">
+          <img src="./src/asteroid.png">
+          Asteroids
+          <img src="./src/asteroid.png">
+        </div>
+        <div class="play">
+          <button onclick="play_begin()">Play game!</button>
+          <div class="play" id="play_dis">
+
+          </div>
+          <div class="setting">
+            <button onclick="setting_begin()"> Settings</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Settings -->
+    <div id="setting_page">
+      <p id="hed1"><b>Settings</b></p>
+      <p id="hed2"><b>Volume: </b><span id="demo"></span></p>
+      <div class="slidecontainer">
+        <input type="range" min="1" max="100" value="50" class="slider" id="myRange">
+      </div>
+      <audio id="fuckword">
+        <source src = "src/audio/collect.mp3">
+      </audio>
+      <p id="hed3"><b>Difficulty</b></p>
+      <div id="setting_mode">
+        <div class="active_e"></div>
+        <button id="easy_but" class="easyfix" onclick="easy()">Easy</button>
+        <button id="normal_but" class="normalfix" onclick="medium()"> Normal</button>
+        <button id="hard_but" class="hardfix" onclick="hard()"> Hard</button>
+      </div>
+      <div id="close_setting">
+        <button onclick="close_set()">Close </button>
+      </div>
+    </div>
+
+    <!-- Tutorial -->
+    <div id="tutorial_page">
+      <div id="tutorial_body">
+        <p id="titel_bod"> How to to play</p>
+        <p> <b>Avoid</b> <i> asteroid</i></p>
+        <img src="./src/asteroid.png">
+        <p> <b>Collect</b> <i>shields</i>! <b>Travel</b> through <i>portals</i> to the next level!</p>
+        <span></span>
+        <div id="two_img">
+          <img src="./src/shield.gif">
+          <img src="./src/port.gif">
+        </div>
+        <p><b>Gain</b> as many <i>points</i> possible!</p>
+        <button onclick="start_game()">Start</button>
+      </div>
+    </div>
+
+    <!--Get Ready!-->
+    <div id="get_ready_1" class="get_ready">
+      <div id="getreadytotal">
+        <p id="get_readytitle"> <b>Get Ready!</b></p>
+        <div id="get_readyimg" class="get_ready">
+          <img src="./src/arrowkeys.png">
+        </div>
+        <div id="get_ready_2" class="get_ready">
+          <p>Use arrow keys to move</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Actual Game -->
+    <div id="actual_game">
+      <div class="asteroidSection">
+        <div class="curAstroid"> </div>
+      </div>
+      <div id="game_right_section">
+        <div id="scoreword">
+          SCORE
+          <div id="score_num"></div>
+        </div>
+        <div id="danger">DANGER
+          <div id="danger_num">
+          </div>
+        </div>
+        <div id="level">LEVEL
+          <div id="level_num"></div>
+        </div>
+      </div>
+      <div class="spaceship">
+        <div id="discovery">
+          <img id="space" src="./src/player/player.gif">
+        </div>
+        <audio id="spaceypoo">
+          <source src = "src/audio/die.mp3">
+        </audio>
+      </div>
+      <div class="sheild">
+      </div>
+      <div class="portal">
+      </div>
+    </div>
+
+
+    <!--Score Page-->
+    <div id="score_page">
+      <div id="score_header">
+        <img src="./src/asteroid.png">
+        Asteroids
+        <img src="./src/asteroid.png">
+      </div>
+      <div class="start_over">
+        <p class = text_over> GAMER OVER!</p>
+        <p class = text_over>YOU HAVE TO FIX YOUR SPACESHIP!</p>
+        <p class = text_over id = "final_score"></p>
+        <p class = text_over id="score_pres"></p>
+        <button onclick="startover()">Start Over</button>
+      </div>
+    </div>
+
+  </div> <!-- end game-window -->
+  </div>
+  </div> <!-- end outer-container -->
+</body>
+
+</html>
